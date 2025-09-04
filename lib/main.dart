@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/feature/home/presentation/view/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello, World!'))),
+      debugShowCheckedModeBanner: false,
+      home: const HomeView(),
     );
   }
 }

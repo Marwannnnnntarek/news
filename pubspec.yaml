@@ -28,11 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.4.6
-  
+  go_router: ^16.2.1
+
 flutter_native_splash:
   android: true
   ios: true
@@ -41,11 +43,9 @@ flutter_native_splash:
   image: assets/images/8d307fd617cfa891caf1249bdf694925.png
 
   android_12:
-   color: "#ffffff"
-   image: assets/images/8d307fd617cfa891caf1249bdf694925.png
-   
-          # Background color (use hex)
-  
+    color: "#ffffff"
+    image: assets/images/8d307fd617cfa891caf1249bdf694925.png
+    # Background color (use hex)
 
 dev_dependencies:
   flutter_lints: ^5.0.0
