@@ -1,15 +1,16 @@
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:news/core/errors/app_errors.dart';
 import 'package:news/feature/home/data/models/news_model/result.dart';
 import 'package:news/feature/home/data/models/service/api_service.dart';
 import 'package:news/feature/home/data/repos/home_repo.dart';
 
 class HomeRepoImp implements HomeRepo {
+  final ApiService apiService;
+
+  HomeRepoImp(this.apiService);
   @override
   Future<Either<AppError, List<Result>>> fetchNews() async {
     try {
-      final apiService = ApiService(Dio());
       var response = await apiService.get(
         endPoint: 'latest',
         queryParameters: {'country': 'eg'},
