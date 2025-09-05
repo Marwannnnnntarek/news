@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NewsCubit(getIt.get<HomeRepoImp>()),
+      create: (context) => NewsCubit(getIt.get<HomeRepoImp>())..fetchNews(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const HomeView(),

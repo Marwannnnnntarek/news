@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:news/core/errors/app_errors.dart';
 import 'package:news/feature/home/data/models/news_model/result.dart';
-import 'package:news/feature/home/data/models/service/api_service.dart';
+import 'package:news/feature/home/data/service/api_service.dart';
 import 'package:news/feature/home/data/repos/home_repo.dart';
 
 class HomeRepoImp implements HomeRepo {

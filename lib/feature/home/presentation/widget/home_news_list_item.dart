@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class HomeNewsListItem extends StatelessWidget {
@@ -19,24 +20,21 @@ class HomeNewsListItem extends StatelessWidget {
           // Image
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              image,
-              width: double.infinity,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
+            child: CachedNetworkImage(imageUrl: image, fit: BoxFit.fill),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 4),
           Text(
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 4),
           Text(
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
             subTitle,
-            maxLines: 3,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),

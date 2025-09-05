@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:news/feature/home/data/models/service/api_service.dart';
+import 'package:news/feature/home/data/service/api_service.dart';
 import 'package:news/feature/home/data/repos/home_repo_imp.dart';
 
 final getIt = GetIt.instance;
