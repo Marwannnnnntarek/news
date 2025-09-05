@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news/core/utils/app_routes.dart';
 import 'package:news/feature/home/data/models/category_model.dart';
 import 'package:news/feature/home/presentation/widget/home_category_list_item.dart';
 
@@ -17,6 +19,7 @@ class HomeCategoryList extends StatelessWidget {
           return HomeCategoryListItem(
             image: categories[index].image,
             title: categories[index].name,
+            onTap: () => context.push(AppRoutes.category),
           );
         },
         separatorBuilder: (context, index) => const SizedBox(width: 12),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news/core/utils/app_routes.dart';
 import 'package:news/core/utils/setup.dart';
 import 'package:news/feature/home/data/repos/home_repo_imp.dart';
-import 'package:news/feature/home/presentation/view/home_view.dart';
 import 'package:news/feature/home/presentation/view_model/cubit/news_cubit.dart';
 
 void main() {
@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NewsCubit(getIt.get<HomeRepoImp>())..fetchNews(),
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: AppRoutes.router,
         debugShowCheckedModeBanner: false,
-        home: const HomeView(),
       ),
     );
   }
