@@ -11,7 +11,7 @@ class HomeNewsListBlocBuilder extends StatelessWidget {
     return BlocBuilder<NewsCubit, NewsState>(
       builder: (context, state) {
         if (state is NewsLoading) {
-          return Center(child: CircularProgressIndicator());
+          // return const Center(child: CircleAvatar());
         } else if (state is NewsLoaded) {
           return HomeNewsList(news: state.news);
         } else if (state is NewsError) {
