@@ -24,8 +24,21 @@ class HomeNewsListItem extends StatelessWidget {
             // Image
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: CachedNetworkImage(imageUrl: image, fit: BoxFit.fill),
+              child: CachedNetworkImage(
+                imageUrl: image, // handle null value
+                fit: BoxFit.cover,
+                placeholder:
+                    (context, url) =>
+                        const Center(child: CircularProgressIndicator()),
+                errorWidget:
+                    (context, url, error) => const Icon(
+                      Icons.broken_image,
+                      size: 50,
+                      color: Colors.grey,
+                    ),
+              ),
             ),
+
             const SizedBox(height: 4),
             Text(
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
