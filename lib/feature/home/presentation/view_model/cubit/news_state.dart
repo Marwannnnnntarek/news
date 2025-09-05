@@ -9,8 +9,9 @@ final class NewsLoading extends NewsState {}
 
 final class NewsLoaded extends NewsState {
   final List<Result> news;
+  final String selectedCategoryName;
 
-  NewsLoaded(this.news);
+  NewsLoaded(this.news, this.selectedCategoryName);
 }
 
 final class NewsError extends NewsState {

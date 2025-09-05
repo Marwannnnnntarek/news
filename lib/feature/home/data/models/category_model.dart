@@ -6,15 +6,21 @@ class CategoryModel {
 
 final List<CategoryModel> categories = [
   CategoryModel(
-    name: 'Technology',
-    image: 'assets/images/technology.jpeg',
-    id: 'technology',
+    name: 'General',
+    image: 'assets/images/general.avif',
+    id: 'other',
   ),
   CategoryModel(
     name: 'Sports',
     image: 'assets/images/sports.avif',
     id: 'sports',
   ),
+  CategoryModel(
+    name: 'Technology',
+    image: 'assets/images/technology.jpeg',
+    id: 'technology',
+  ),
+
   CategoryModel(
     name: 'Health',
     image: 'assets/images/health.avif',
@@ -30,11 +36,7 @@ final List<CategoryModel> categories = [
     image: 'assets/images/entertaiment.avif',
     id: 'entertainment',
   ),
-  CategoryModel(
-    name: 'General',
-    image: 'assets/images/general.avif',
-    id: 'other',
-  ),
+
   CategoryModel(
     name: 'Science',
     image: 'assets/images/science.avif',

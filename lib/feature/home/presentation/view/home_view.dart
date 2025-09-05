@@ -16,7 +16,10 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     // fetch default category (General for example)
-    context.read<NewsCubit>().fetchNews(category: "top");
+    context.read<NewsCubit>().fetchNews(
+      categoryId: "top",
+      categoryName: "Top News",
+    );
   }
 
   @override

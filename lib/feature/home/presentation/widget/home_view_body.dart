@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/feature/home/data/models/category_model.dart';
-import 'package:news/feature/home/presentation/view_model/cubit/news_cubit.dart';
-import 'package:news/feature/home/presentation/widget/home_category_list.dart';
+import 'package:news/feature/home/presentation/widget/home_category_list_provider.dart';
+import 'package:news/feature/home/presentation/widget/home_header_bloc_builder.dart';
 import 'package:news/feature/home/presentation/widget/home_news_list_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,13 +13,10 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Column(
             children: [
-              HomeCategoryList(
-                categories: categories,
-                onCategorySelected: (String categoryId) {
-                  context.read<NewsCubit>().fetchNews(category: categoryId);
-                },
-              ),
+              HomeCategoryListProvider(),
               const SizedBox(height: 20),
+              HomeHeaderBlocBuilder(),
+              const SizedBox(height: 8),
               HomeNewsListBlocBuilder(),
             ],
           ),

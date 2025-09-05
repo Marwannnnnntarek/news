@@ -8,9 +8,9 @@ class HomeCategoryList extends StatelessWidget {
     required this.categories,
     required this.onCategorySelected,
   });
-  final List<CategoryModel> categories;
 
-  final Function(String categoryId) onCategorySelected;
+  final List<CategoryModel> categories;
+  final Function(CategoryModel category) onCategorySelected;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,11 @@ class HomeCategoryList extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.13, // control height
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-
         itemBuilder: (context, index) {
           return HomeCategoryListItem(
             image: categories[index].image,
             title: categories[index].name,
-            onTap: () => onCategorySelected(categories[index].id),
+            onTap: () => onCategorySelected(categories[index]),
           );
         },
         separatorBuilder: (context, index) => const SizedBox(width: 12),

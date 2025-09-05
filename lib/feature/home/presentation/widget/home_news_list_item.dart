@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:news/feature/home/presentation/widget/home_news_list_item_image.dart';
 
 class HomeNewsListItem extends StatelessWidget {
   const HomeNewsListItem({
@@ -22,22 +22,7 @@ class HomeNewsListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: CachedNetworkImage(
-                imageUrl: image, // handle null value
-                fit: BoxFit.cover,
-                placeholder:
-                    (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
-                errorWidget:
-                    (context, url, error) => const Icon(
-                      Icons.broken_image,
-                      size: 50,
-                      color: Colors.grey,
-                    ),
-              ),
-            ),
+            HomeNewsListItemImage(image: image),
 
             const SizedBox(height: 4),
             Text(

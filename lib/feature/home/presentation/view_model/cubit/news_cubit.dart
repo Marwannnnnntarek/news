@@ -10,12 +10,15 @@ class NewsCubit extends Cubit<NewsState> {
 
   NewsCubit(this.homeRepo) : super(NewsInitial());
 
-  Future<void> fetchNews({required String category}) async {
+  Future<void> fetchNews({
+    required String categoryId,
+    required String categoryName,
+  }) async {
     emit(NewsLoading());
-    final result = await homeRepo.fetchNews(category: category);
+    final result = await homeRepo.fetchNews(category: categoryId);
     result.fold(
       (error) => emit(NewsError(error.message)),
-      (news) => emit(NewsLoaded(news)),
+      (news) => emit(NewsLoaded(news, categoryName)),
     );
   }
 }
