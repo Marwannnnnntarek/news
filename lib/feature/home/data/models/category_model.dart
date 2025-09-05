@@ -1,18 +1,43 @@
 class CategoryModel {
-  final String name, image;
+  final String name, image, id;
 
-  CategoryModel({required this.name, required this.image});
+  CategoryModel({required this.id, required this.name, required this.image});
 }
 
 final List<CategoryModel> categories = [
-  CategoryModel(name: 'Technology', image: 'assets/images/technology.jpeg'),
-  CategoryModel(name: 'Sports', image: 'assets/images/sports.avif'),
-  CategoryModel(name: 'Health', image: 'assets/images/health.avif'),
-  CategoryModel(name: 'Business', image: 'assets/images/business.avif'),
+  CategoryModel(
+    name: 'Technology',
+    image: 'assets/images/technology.jpeg',
+    id: 'technology',
+  ),
+  CategoryModel(
+    name: 'Sports',
+    image: 'assets/images/sports.avif',
+    id: 'sports',
+  ),
+  CategoryModel(
+    name: 'Health',
+    image: 'assets/images/health.avif',
+    id: 'health',
+  ),
+  CategoryModel(
+    name: 'Business',
+    image: 'assets/images/business.avif',
+    id: 'business',
+  ),
   CategoryModel(
     name: 'Entertainment',
     image: 'assets/images/entertaiment.avif',
+    id: 'entertainment',
   ),
-  CategoryModel(name: 'General', image: 'assets/images/general.avif'),
-  CategoryModel(name: 'Science', image: 'assets/images/science.avif'),
+  CategoryModel(
+    name: 'General',
+    image: 'assets/images/general.avif',
+    id: 'other',
+  ),
+  CategoryModel(
+    name: 'Science',
+    image: 'assets/images/science.avif',
+    id: 'science',
+  ),
 ];

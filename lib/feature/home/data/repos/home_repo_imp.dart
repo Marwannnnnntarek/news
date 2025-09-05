@@ -9,11 +9,13 @@ class HomeRepoImp implements HomeRepo {
 
   HomeRepoImp(this.apiService);
   @override
-  Future<Either<AppError, List<Result>>> fetchNews() async {
+  Future<Either<AppError, List<Result>>> fetchNews({
+    required String category,
+  }) async {
     try {
       var response = await apiService.get(
         endPoint: 'latest',
-        queryParameters: {'country': 'eg'},
+        queryParameters: {'country': 'eg', 'category': category},
       );
 
       if (response['results'] == null) {
