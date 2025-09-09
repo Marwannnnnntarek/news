@@ -14,7 +14,7 @@ class HomeRepoImp implements HomeRepo {
   }) async {
     try {
       var response = await apiService.get(
-        endPoint: 'latest',
+        endPoint: 'news',
         queryParameters: {'country': 'eg', 'category': category},
       );
 
